@@ -26,6 +26,7 @@ const NotesClient = () => {
 		if (!res.notes.length) {
 			toastMessage(MyToastType.error, "No matches on this request. Please try another one")
 		}
+		setTotalPages(res.totalPages)
 		return res
 	}
 
@@ -33,7 +34,6 @@ const NotesClient = () => {
 		queryKey: ["notesQuery", notehubQuery, currentPage],
 		queryFn: async () => fetchQueryData(),
 		placeholderData: keepPreviousData,
-		staleTime: 0,
 		refetchOnMount: false,
 	})
 
