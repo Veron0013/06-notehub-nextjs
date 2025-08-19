@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import css from "./App.module.css"
+import css from "./Notes.module.css"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import type { Note, NotesData } from "@/types/note"
 import { createQueryParams, fetchNotes } from "@/lib/api"
