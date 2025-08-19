@@ -66,13 +66,13 @@ export default function NoteList({ notes, onSelect }: NoteListProps) {
 							<div className={css.footer}>
 								<span className={css.tag}>{item.tag}</span>
 								<div className={css.buttonsWrapper}>
-									<button className={css.button} id="deleteButton">
+									<button className={`${css.button} ${css.delete}`} id="deleteButton">
 										Delete
 									</button>
-									<button className={css.button} id="editButton">
+									<button className={`${css.button} ${css.edit}`} id="editButton">
 										Edit
 									</button>
-									<Link className={css.button} href={`/notes/${item.id}`}>
+									<Link className={`${css.button} ${css.details}`} href={`/notes/${item.id}`}>
 										View details
 									</Link>
 								</div>
