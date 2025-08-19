@@ -11,7 +11,7 @@ const Error = ({ error }: Props) => {
 	return (
 		<div className={css.wrapper}>
 			<p className={css.text}>{ERROR_MAIN_MESSAGE}</p>
-			<p className={css.text}>{error?.message ? error.message : "NO DATA"}</p>
+			<p className={css.text}>{error?.message ? error.message : "Could not fetch note details"}</p>
 		</div>
 	)
 }

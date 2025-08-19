@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import css from "./Notes.module.css"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import type { Note, NotesData } from "@/types/note"
@@ -26,7 +26,6 @@ const NotesClient = () => {
 		if (!res.notes.length) {
 			toastMessage(MyToastType.error, "No matches on this request. Please try another one")
 		}
-		setTotalPages(res.totalPages)
 		return res
 	}
 
@@ -34,8 +33,15 @@ const NotesClient = () => {
 		queryKey: ["notesQuery", notehubQuery, currentPage],
 		queryFn: async () => fetchQueryData(),
 		placeholderData: keepPreviousData,
+		staleTime: 0,
 		refetchOnMount: false,
 	})
+
+	useEffect(() => {
+		if (data?.notes?.length) {
+			setTotalPages(data.totalPages)
+		}
+	}, [data])
 
 	const debouncedQueryChange = useDebouncedCallback((value: string) => {
 		setNoteHubQuery(value)

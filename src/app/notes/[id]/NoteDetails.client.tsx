@@ -15,7 +15,7 @@ const NoteDetailsClient = () => {
 		isLoading,
 		error,
 	} = useQuery({
-		queryKey: ["note", id],
+		queryKey: ["notesQuery", id],
 		queryFn: () => getSingleNote(id),
 		refetchOnMount: false,
 	})
