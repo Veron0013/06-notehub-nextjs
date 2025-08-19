@@ -1,0 +1,28 @@
+.inputWrapper {
+	position: relative;
+}
+
+.input {
+	flex: 1;
+	max-width: 240px;
+	padding: 6px 12px;
+	font-size: 16px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+}
+
+.clear {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 6px;
+	height: 26px;
+	top: 50%;
+	right: 6px;
+	transform: translateY(-50%);
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	user-select: none;
+}
